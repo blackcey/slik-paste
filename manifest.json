@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "SLIK Paste",
+  "version": "1.2.0",
+  "description": "Right-click in a text field to paste a clipboard list as discrete IFS searchable values (=x;=y;=z;). Auto-detects the delimiter.",
+  "permissions": ["contextMenus", "scripting", "clipboardRead", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "SLIK Paste",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

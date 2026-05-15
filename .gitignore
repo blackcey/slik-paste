@@ -1,0 +1,16 @@
+# Build artifacts — distribute via GitHub Releases, not in the tree
+*.zip
+
+# Local Claude Code config
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Raw screenshot drafts (pre-padding)
+shot*-raw.png

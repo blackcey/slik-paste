@@ -1,8 +1,11 @@
 {
   "manifest_version": 3,
   "name": "SLIK Paste",
-  "version": "1.2.0",
-  "description": "Right-click in a text field to paste a clipboard list as discrete IFS searchable values (=x;=y;=z;). Auto-detects the delimiter.",
+  "version": "1.3.1",
+  "description": "Right-click to paste a clipboard list into any text field as an IFS search filter — precise (=x;=y;) or numeric/starts-with (x;y).",
+  "author": "SLIK Consulting Ltd",
+  "homepage_url": "https://www.slikconsulting.com",
+  "minimum_chrome_version": "109",
   "permissions": ["contextMenus", "scripting", "clipboardRead", "activeTab"],
   "background": {
     "service_worker": "background.js"

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLIK Paste — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #555;
+    --border: #e3e3e3;
+    --accent: #2a5db0;
+    --code-bg: #f4f4f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141518;
+      --fg: #e8e8ea;
+      --muted: #a0a0a8;
+      --border: #2b2d33;
+      --accent: #8ab4ff;
+      --code-bg: #1e2026;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141518;
+    --fg: #e8e8ea;
+    --muted: #a0a0a8;
+    --border: #2b2d33;
+    --accent: #8ab4ff;
+    --code-bg: #1e2026;
+  }
+  html, body { background: var(--bg); color: var(--fg); }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  h1 { font-size: 2rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 2rem 0 .5rem; border-bottom: 1px solid var(--border); padding-bottom: .25rem; }
+  .meta { color: var(--muted); font-size: .9rem; margin-bottom: 1.5rem; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; }
+  code { background: var(--code-bg); padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+  a { color: var(--accent); }
+  strong { color: var(--fg); }
+</style>
+</head>
+<body>
+  <h1>SLIK Paste — Privacy Policy</h1>
+  <p class="meta">Last updated: 17 October 2026</p>
+
+  <p>SLIK Paste is a browser extension published by <strong>SLIK Consulting Ltd</strong> (United Kingdom). This policy explains what the extension does with your data. The short version: <strong>it does not collect, store, or transmit anything</strong>. The longer version is below.</p>
+
+  <h2>What data the extension accesses</h2>
+  <p>When you right-click in an editable field on a web page and choose either item from the <strong>SLIK Paste</strong> submenu (<em>"Search Precise Values"</em> or <em>"Search - Numeric / Start with"</em>), the extension does the following — and only the following — in that moment:</p>
+  <ol>
+    <li>Reads the current text contents of your operating-system clipboard, using the browser's standard Clipboard API.</li>
+    <li>Parses the clipboard text into a list of values (auto-detecting the delimiter).</li>
+    <li>Inserts the reformatted text into the editable field you right-clicked on.</li>
+  </ol>
+  <p>That is the entire data flow. It happens in your browser, on your machine, while the menu item is being clicked.</p>
+
+  <h2>What data the extension stores</h2>
+  <p><strong>None.</strong> SLIK Paste declares no storage permissions and writes nothing to disk, browser storage, sync, or cookies. Closing the tab or restarting the browser leaves no extension state behind.</p>
+
+  <h2>What data the extension transmits</h2>
+  <p><strong>None.</strong> SLIK Paste makes no network requests. It does not contact SLIK Consulting Ltd, Google, Microsoft, or any third party. There are no analytics, telemetry, crash reporting, or update beacons beyond the standard browser-managed extension auto-update mechanism.</p>
+
+  <h2>Permissions, explained</h2>
+  <table>
+    <thead><tr><th>Permission</th><th>Why it's needed</th></tr></thead>
+    <tbody>
+      <tr><td><code>contextMenus</code></td><td>Adds the right-click menu item that triggers the paste.</td></tr>
+      <tr><td><code>clipboardRead</code></td><td>Reads the clipboard text so it can be reformatted. Only read at the moment you click the menu item.</td></tr>
+      <tr><td><code>activeTab</code></td><td>Grants temporary access to the page you right-clicked on, so the reformatted text can be inserted.</td></tr>
+      <tr><td><code>scripting</code></td><td>Injects the formatting &amp; paste code into the active tab when the menu item is clicked.</td></tr>
+    </tbody>
+  </table>
+  <p>The extension does <strong>not</strong> request <code>&lt;all_urls&gt;</code> host access, <code>storage</code>, <code>tabs</code>, <code>history</code>, <code>cookies</code>, or any other broad permission.</p>
+
+  <h2>Children's privacy</h2>
+  <p>SLIK Paste is a productivity tool aimed at business users. It is not directed at children and collects no information from anyone, including children under 13.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the extension's data handling ever changes, this policy will be updated and the "Last updated" date above will change. Material changes will also be reflected in the Chrome Web Store and Microsoft Edge Add-ons listings.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or the extension:</p>
+  <p>
+    <strong>SLIK Consulting Ltd</strong><br>
+    Email: <a href="mailto:privacy@slikconsulting.co.uk">privacy@slikconsulting.co.uk</a><br>
+    Website: <a href="https://www.slikconsulting.com">https://www.slikconsulting.com</a>
+  </p>
+</body>
+</html>

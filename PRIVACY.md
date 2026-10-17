@@ -1,12 +1,12 @@
 # SLIK Paste — Privacy Policy
 
-_Last updated: 14 May 2026_
+_Last updated: 17 October 2026_
 
 SLIK Paste is a browser extension published by **SLIK Consulting Ltd** (United Kingdom). This policy explains what the extension does with your data. The short version: **it does not collect, store, or transmit anything**. The longer version is below.
 
 ## What data the extension accesses
 
-When you right-click in an editable field on a web page and choose **"SLIK Paste: IFS Discrete Values"**, the extension does the following — and only the following — in that moment:
+When you right-click in an editable field on a web page and choose either item from the **SLIK Paste** submenu (*"Search Precise Values"* or *"Search - Numeric / Start with"*), the extension does the following — and only the following — in that moment:
 
 1. Reads the current text contents of your operating-system clipboard, using the browser's standard Clipboard API.
 2. Parses the clipboard text into a list of values (auto-detecting the delimiter).
@@ -46,5 +46,5 @@ If the extension's data handling ever changes, this policy will be updated and t
 Questions about this policy or the extension:
 
 **SLIK Consulting Ltd**
-Email: _privacy@slikconsulting.com_ _(replace with your real address before publishing)_
+Email: privacy@slikconsulting.co.uk
 Website: https://www.slikconsulting.com

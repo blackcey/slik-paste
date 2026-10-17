@@ -1,22 +1,43 @@
-const MENU_ID = "slik-paste-formatted";
+const PARENT_ID = "slik-paste";
+const PRECISE_ID = "slik-paste-precise";
+const PLAIN_ID = "slik-paste-plain";
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.contextMenus.create({
-    id: MENU_ID,
-    title: "SLIK Paste: IFS Discrete Values",
-    contexts: ["editable"]
+  chrome.contextMenus.removeAll(() => {
+    chrome.contextMenus.create({
+      id: PARENT_ID,
+      title: "SLIK Paste",
+      contexts: ["editable"]
+    });
+    chrome.contextMenus.create({
+      id: PRECISE_ID,
+      parentId: PARENT_ID,
+      title: "Search Precise Values",
+      contexts: ["editable"]
+    });
+    chrome.contextMenus.create({
+      id: PLAIN_ID,
+      parentId: PARENT_ID,
+      title: "Search - Numeric / Start with",
+      contexts: ["editable"]
+    });
   });
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId !== MENU_ID || !tab?.id) return;
+  let mode;
+  if (info.menuItemId === PRECISE_ID) mode = "precise";
+  else if (info.menuItemId === PLAIN_ID) mode = "plain";
+  else return;
+  if (!tab?.id) return;
   chrome.scripting.executeScript({
     target: { tabId: tab.id, frameIds: info.frameId != null ? [info.frameId] : undefined },
-    func: pasteFormatted
+    func: pasteFormatted,
+    args: [mode]
   });
 });
 
-function pasteFormatted() {
+function pasteFormatted(mode) {
   // Parse spreadsheet-style text (tab cells, newline rows, Excel CSV quoting).
   // Returns a flat list of cells regardless of shape (1xN, Nx1, or NxM).
   function parseSpreadsheet(text) {
@@ -94,7 +115,11 @@ function pasteFormatted() {
 
     if (values.length === 0) return;
 
-    const formatted = values.map(v => `=${v}`).join(";") + ";";
+    // "precise" -> =x;=y;=z;   (exact match in IFS, trailing ;)
+    // "plain"   ->  x;y;z      (numeric / starts-with match in IFS, no trailing ;)
+    const prefix = mode === "precise" ? "=" : "";
+    let formatted = values.map(v => `${prefix}${v}`).join(";");
+    if (mode === "precise") formatted += ";";
 
     const el = document.activeElement;
     if (!el) return;
